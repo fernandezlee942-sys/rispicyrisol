@@ -1,0 +1,22 @@
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step-card {
+  position: relative; background: #fff; border: 2px solid var(--line);
+  border-radius: var(--radius); padding: 36px 26px 30px; text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.step-num {
+  position: absolute; top: 16px; right: 20px; font-family: 'Fraunces', serif;
+  font-size: 1.6rem; font-weight: 900; color: var(--soft);
+}
+.step-icon { font-size: 2.6rem; margin-bottom: 16px; }
+.step-card h3 { margin-bottom: 9px; font-size: 1.08rem; }
+.step-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.65; }
+.step-arrow {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; color: var(--brand); z-index: 2; font-weight: 800;
+}
+@media (max-width: 860px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-arrow { display: none; }
+}

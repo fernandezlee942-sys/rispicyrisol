@@ -1,0 +1,23 @@
+.testi-section { background: var(--paper); border-block: 2px solid var(--line); }
+.testi-card {
+  max-width: 720px; margin: 0 auto; background: #fff; border: 2px solid var(--line);
+  border-radius: 28px; padding: 42px 38px; text-align: center;
+  box-shadow: var(--shadow); animation: popIn 0.55s ease both;
+}
+.testi-stars { font-size: 1.15rem; letter-spacing: 4px; margin-bottom: 18px; }
+.testi-text { font-family: 'Fraunces', serif; font-size: 1.28rem; line-height: 1.55; margin-bottom: 26px; }
+.testi-person { display: flex; align-items: center; justify-content: center; gap: 13px; }
+.testi-avatar {
+  width: 48px; height: 48px; border-radius: 50%; background: var(--brand); color: #fff;
+  display: grid; place-items: center; font-weight: 800; font-size: 1.15rem;
+}
+.testi-person div { text-align: left; }
+.testi-person strong { display: block; }
+.testi-person span { font-size: 0.83rem; color: var(--muted); }
+.testi-dots { display: flex; justify-content: center; gap: 9px; margin-top: 26px; }
+.testi-dot {
+  width: 10px; height: 10px; border-radius: 999px; background: var(--line);
+  transition: all 0.3s ease; padding: 0;
+}
+.testi-dot.active { width: 30px; background: var(--brand); }
+@media (max-width: 640px) { .testi-card { padding: 32px 22px; } .testi-text { font-size: 1.1rem; } }

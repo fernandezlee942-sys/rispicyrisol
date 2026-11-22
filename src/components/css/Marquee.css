@@ -1,0 +1,14 @@
+.marquee {
+  background: var(--ink); color: var(--cream); overflow: hidden;
+  padding: 15px 0; transform: rotate(-1.1deg) scale(1.02);
+}
+.marquee-track {
+  display: flex; gap: 44px; width: max-content;
+  animation: marqueeScroll 26s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; white-space: nowrap; }
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
