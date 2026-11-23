@@ -1,0 +1,51 @@
+.error-page {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 120px 20px 70px;
+}
+
+.error-card {
+    width: min(520px, 100%);
+    text-align: center;
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 26px;
+    padding: 44px 30px;
+    box-shadow: var(--shadow);
+    animation: popIn 0.5s ease both;
+}
+
+.error-emoji {
+    font-size: 3.6rem;
+    display: block;
+    margin-bottom: 6px;
+    animation: floaty 3.4s ease-in-out infinite;
+}
+
+.error-code {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 14vw, 6rem);
+    line-height: 1;
+    color: var(--brand);
+}
+
+.error-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    margin: 10px 0 8px;
+}
+
+.error-card p {
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 26px;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}

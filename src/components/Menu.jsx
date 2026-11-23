@@ -10,7 +10,7 @@ const filters = [
   ['manis', 'Manis'],
 ]
 
-export default function Menu({ cart, onAdd, onChangeQty }) {
+export default function Menu() {
   const [filter, setFilter] = useState('semua')
 
   const match = (p) => filter === 'semua' || p.category === filter
@@ -41,13 +41,7 @@ export default function Menu({ cart, onAdd, onChangeQty }) {
         {featured.length > 0 && (
           <div className="menu-grid">
             {featured.map((p) => (
-              <ProductCard
-                key={p.id}
-                product={p}
-                qty={cart[p.id] || 0}
-                onAdd={onAdd}
-                onChangeQty={onChangeQty}
-              />
+              <ProductCard key={p.id} product={p} />
             ))}
           </div>
         )}
@@ -64,15 +58,6 @@ export default function Menu({ cart, onAdd, onChangeQty }) {
                 </div>
                 <div className="variant-side">
                   <span className="variant-price">{formatIDR(p.price)}<small>/pcs</small></span>
-                  {(cart[p.id] || 0) === 0 ? (
-                    <button className="add-btn" onClick={() => onAdd(p)}>+ Keranjang</button>
-                  ) : (
-                    <div className="qty-control">
-                      <button onClick={() => onChangeQty(p.id, cart[p.id] - 1)} aria-label="Kurangi">−</button>
-                      <span>{cart[p.id]}</span>
-                      <button onClick={() => onChangeQty(p.id, cart[p.id] + 1)} aria-label="Tambah">+</button>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

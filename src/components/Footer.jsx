@@ -1,5 +1,6 @@
 import { WA_NUMBER } from './products'
 import './css/Footer.css'
+import { Link } from 'react-router'
 
 export default function Footer() {
   return (
@@ -19,19 +20,19 @@ export default function Footer() {
 
       <div className="footer-inner">
         <div className="footer-col">
-          <a href="#beranda" className="logo footer-logo">
+          <Link to="/#beranda" className="logo footer-logo">
             <span className="logo-badge">R</span>
             Rispicy Risol<span className="logo-dot">.</span>
-          </a>
+          </Link>
           <p>Risol premium homemade — renyah di luar, lumer di dalam. Dibuat fresh setiap hari dari dapur kami untuk kamu.</p>
         </div>
         <div className="footer-col">
           <h4>Navigasi</h4>
-          <a href="#kenapa">Kenapa Kami</a>
-          <a href="#menu">Menu</a>
-          <a href="#cara-pesan">Cara Pesan</a>
-          <a href="#testimoni">Testimoni</a>
-          <a href="#faq">FAQ</a>
+          <Link to="/#kenapa">Kenapa Kami</Link>
+          <Link to="/#menu">Menu</Link>
+          <Link to="/#cara-pesan">Cara Pesan</Link>
+          <Link to="/#testimoni">Testimoni</Link>
+          <Link to="/#faq">FAQ</Link>
         </div>
         <div className="footer-col">
           <h4>Jam Buka</h4>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './css/Faq.css'
 
 const faqs = [
-  { q: 'Minimal order berapa?', a: 'Untuk pengantaran, minimal order 5 pcs. Di bawah itu tetap bisa, tapi ambil sendiri di dapur kami ya. Beli 10 pcs gratis 1 pcs setiap hari!' },
+  { q: 'Minimal order berapa?', a: 'Untuk pengantaran, minimal order 5 pcs. Di bawah itu tetap bisa, tapi ambil sendiri di dapur kami ya.' },
   { q: 'Bisa pesan frozen (mentah) nggak?', a: 'Bisa banget! Semua varian tersedia dalam frozen pack isi 5 atau 10. Tahan sampai 2 minggu di freezer, tinggal goreng 5 menit kapan pun kamu mau.' },
   { q: 'Bisa order banyak buat acara?', a: 'Bisa! Kami melayani order 50–500 pcs untuk acara kantor, arisan, pengajian, dan ulang tahun. Pesan minimal H-1 lewat WhatsApp biar kami siapkan dengan rapi.' },
   { q: 'Pengantarannya ke mana aja?', a: 'Kami antar sendiri untuk radius 5 km (gratis ongkir untuk pembelian di atas Rp50.000). Di luar itu bisa pakai ojek online, atau ambil langsung di dapur.' },
