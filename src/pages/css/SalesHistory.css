@@ -1,0 +1,151 @@
+.history-page {
+    padding: 120px 20px 90px;
+}
+
+.history-add {
+    margin-top: 18px;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 34px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 22px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.stat-card strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--brand-dark);
+}
+
+.stat-card small {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.history-table-wrap {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 26px;
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 880px;
+    font-size: 0.9rem;
+}
+
+.history-table th {
+    text-align: left;
+    padding: 16px 18px;
+    background: var(--soft);
+    color: var(--brand-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.history-table td {
+    padding: 16px 18px;
+    border-top: 1.5px dashed var(--line);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.row-note {
+    display: block;
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+.row-total {
+    font-weight: 800;
+    color: var(--brand-dark);
+    white-space: nowrap;
+}
+
+.channel-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.channel-badge.online {
+    background: #dcf8e6;
+    color: #137a3b;
+}
+
+.channel-badge.offline {
+    background: var(--soft);
+    color: var(--brand-dark);
+}
+
+@media (max-width: 900px) {
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .history-page {
+        padding: 100px 16px 70px;
+    }
+}
+
+.receipt-btn {
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    background: #fff;
+    border: 2px solid var(--line);
+    transition: border-color 0.2s ease;
+}
+
+.receipt-btn:hover {
+    border-color: var(--gold);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-badge.paid {
+    background: #dcf8e6;
+    color: #137a3b;
+}
+
+.status-badge.unpaid {
+    background: #fde8e4;
+    color: #b42318;
+}

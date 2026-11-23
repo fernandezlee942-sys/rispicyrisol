@@ -1,7 +1,7 @@
 import { formatIDR } from './products'
 import './css/ProductCard.css'
 
-export default function ProductCard({ product, qty, onAdd, onChangeQty }) {
+export default function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-img">
@@ -17,17 +17,6 @@ export default function ProductCard({ product, qty, onAdd, onChangeQty }) {
             {formatIDR(product.price)}
             <span>/pcs</span>
           </div>
-          {qty === 0 ? (
-            <button className="add-btn" onClick={() => onAdd(product)}>
-              + Keranjang
-            </button>
-          ) : (
-            <div className="qty-control">
-              <button onClick={() => onChangeQty(product.id, qty - 1)} aria-label="Kurangi">−</button>
-              <span>{qty}</span>
-              <button onClick={() => onChangeQty(product.id, qty + 1)} aria-label="Tambah">+</button>
-            </div>
-          )}
         </div>
       </div>
     </article>

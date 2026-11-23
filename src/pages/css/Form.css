@@ -1,0 +1,46 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.field label {
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 13px 16px;
+    border-radius: 14px;
+    border: 2px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 78px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--brand);
+}
+
+.form-error {
+    background: #fde8e4;
+    color: #b42318;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 11px 14px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}

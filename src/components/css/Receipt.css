@@ -1,0 +1,72 @@
+.receipt {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 16px;
+}
+
+.receipt-head {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.receipt-head strong {
+    font-size: 1.1rem;
+}
+
+.receipt-sep {
+    border-top: 1.5px dashed #000;
+    margin: 10px 0;
+}
+
+.receipt-meta div,
+.receipt-row,
+.receipt-item div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.receipt-item {
+    margin-bottom: 6px;
+}
+
+.receipt-row.total {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.receipt-foot {
+    text-align: center;
+}
+
+/* salinan struk khusus cetak: disembunyikan di layar */
+.print-only {
+    display: none;
+}
+
+@media print {
+    @page {
+        size: 80mm auto;
+        margin: 4mm;
+    }
+
+    body>*:not(.print-only) {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    .print-only .receipt {
+        max-width: none;
+        padding: 0;
+    }
+}

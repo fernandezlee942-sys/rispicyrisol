@@ -1,64 +1,331 @@
 .navbar {
-  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
   transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
   padding: 18px 20px;
 }
+
 .navbar-scrolled {
   background: rgba(255, 248, 238, 0.92);
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 30px rgba(94, 48, 10, 0.1);
   padding: 10px 20px;
 }
+
 .navbar-inner {
-  max-width: 1180px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
-.logo { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.55rem; display: flex; align-items: center; gap: 9px; }
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 1.55rem;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .logo-badge {
-  width: 38px; height: 38px; border-radius: 12px; background: var(--brand); color: #fff;
-  display: grid; place-items: center; font-size: 1.15rem; transform: rotate(-6deg);
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  transform: rotate(-6deg);
+  flex-shrink: 0;
 }
-.logo-dot { color: var(--brand); }
-.nav-links { display: flex; align-items: center; gap: 30px; }
-.nav-links a { font-weight: 600; font-size: 0.95rem; position: relative; padding: 4px 0; }
+
+.logo-dot {
+  color: var(--brand);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex: 1;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 4px 0;
+  white-space: nowrap;
+}
+
 .nav-links a:not(.nav-cta)::after {
-  content: ''; position: absolute; left: 0; bottom: 0; height: 2.5px; width: 0;
-  background: var(--brand); border-radius: 2px; transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2.5px;
+  width: 0;
+  background: var(--brand);
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
-.nav-links a:not(.nav-cta):hover::after { width: 100%; }
+
+.nav-links a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
 .nav-cta {
-  background: var(--ink); color: #fff !important; padding: 10px 20px !important;
-  border-radius: 999px; transition: background 0.25s ease, transform 0.25s ease;
+  background: var(--ink);
+  color: #fff !important;
+  padding: 10px 20px !important;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
-.nav-cta:hover { background: var(--brand); transform: translateY(-2px); }
-.navbar-actions { display: flex; align-items: center; gap: 10px; }
-.cart-btn {
-  position: relative; width: 46px; height: 46px; border-radius: 50%;
-  background: #fff; border: 2px solid var(--line); font-size: 1.2rem;
-  display: grid; place-items: center; transition: transform 0.2s ease, border-color 0.2s ease;
+
+.nav-cta:hover {
+  background: var(--brand);
+  transform: translateY(-2px);
 }
-.cart-btn:hover { transform: scale(1.07); border-color: var(--gold); }
-.cart-count {
-  position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px;
-  background: var(--brand); color: #fff; border-radius: 999px; font-size: 0.72rem;
-  font-weight: 800; display: grid; place-items: center; padding: 0 5px;
-  animation: popIn 0.3s ease;
+
+.nav-logout {
+  display: none;
 }
+
+/* hanya tampil di menu burger */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ===== chip user (sama untuk user & admin) ===== */
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 16px 4px 4px;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.user-chip.admin .user-avatar {
+  background: var(--ink);
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  font-weight: 700;
+  font-size: 0.88rem;
+  min-width: 0;
+}
+
+.user-name {
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-meta small {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.auth-btn {
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: #fff;
+  border: 2px solid var(--line);
+  white-space: nowrap;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
 .burger {
-  display: none; width: 46px; height: 46px; border-radius: 50%;
-  background: #fff; border: 2px solid var(--line); font-size: 1.15rem;
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--line);
+  font-size: 1.15rem;
 }
-@media (max-width: 860px) {
-  .burger { display: grid; place-items: center; }
+
+/* ===== layar kecil: menu jadi burger ===== */
+@media (max-width: 1100px) {
+  .burger {
+    display: grid;
+    place-items: center;
+  }
+
   .nav-links {
-    position: absolute; top: calc(100% + 8px); left: 16px; right: 16px;
-    background: #fff; border-radius: 18px; box-shadow: var(--shadow);
-    flex-direction: column; align-items: stretch; gap: 4px; padding: 14px;
-    opacity: 0; pointer-events: none; transform: translateY(-8px);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
-  .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
-  .nav-links a { padding: 11px 14px; border-radius: 10px; }
-  .nav-links a:hover { background: var(--cream); }
-  .nav-cta { text-align: center; margin-top: 6px; }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 11px 14px;
+    border-radius: 10px;
+  }
+
+  .nav-links a:not(.nav-cta)::after {
+    display: none;
+  }
+
+  .nav-links a:hover {
+    background: var(--cream);
+  }
+
+  .nav-cta {
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .nav-logout {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    background: #fff;
+    border: 2px solid var(--line);
+  }
+
+  .nav-logout:hover {
+    border-color: var(--gold);
+  }
+
+  .logout-desktop {
+    display: none;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+  }
+}
+
+/* ===== HP: logo dan chip dikecilkan, chip tetap tampil ===== */
+@media (max-width: 560px) {
+  .navbar {
+    padding: 14px;
+  }
+
+  .navbar-scrolled {
+    padding: 8px 14px;
+  }
+
+  .navbar-inner {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    gap: 7px;
+  }
+
+  .logo-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .burger {
+    width: 42px;
+    height: 42px;
+  }
+
+  .user-chip {
+    gap: 8px;
+    padding: 3px 12px 3px 3px;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .user-meta {
+    font-size: 0.8rem;
+  }
+
+  .user-name {
+    max-width: 64px;
+  }
+
+  .nav-links {
+    left: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .user-meta {
+    display: none;
+  }
+
+  .user-chip {
+    padding: 3px;
+  }
 }
