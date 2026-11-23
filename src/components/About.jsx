@@ -12,7 +12,7 @@ export default function About() {
     <section id="kenapa" className="section">
       <div className="wrap">
         <div className="section-head reveal">
-          <span className="kicker">Kenapa Risolle</span>
+          <span className="kicker">Kenapa Rispicy Risol</span>
           <h2>Bukan Risol Sembarangan</h2>
           <p>Kami mulai dari dapur rumah tahun 2021. Satu prinsip yang nggak pernah berubah: kalau nggak enak buat keluarga sendiri, nggak kami jual.</p>
         </div>

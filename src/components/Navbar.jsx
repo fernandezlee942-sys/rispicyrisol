@@ -24,7 +24,7 @@ export default function Navbar({ cartCount, onCartClick }) {
       <div className="navbar-inner">
         <a href="#beranda" className="logo">
           <span className="logo-badge">R</span>
-          Risolle<span className="logo-dot">.</span>
+          Rispicy Risol<span className="logo-dot">.</span>
         </a>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>

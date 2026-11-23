@@ -23,7 +23,7 @@ export default function Menu({ cart, onAdd, onChangeQty }) {
         <div className="section-head reveal">
           <span className="kicker">Menu Kami</span>
           <h2>Pilih Risol Favoritmu</h2>
-          <p>Harga per pcs. Beli 10 gratis 1 setiap hari — cocok buat camilan kantor, arisan, atau acara besar.</p>
+          <p>cocok buat camilan kantor, arisan, atau acara besar.</p>
         </div>
 
         <div className="menu-filters reveal">
